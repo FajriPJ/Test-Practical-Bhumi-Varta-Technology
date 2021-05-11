@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <style>
+    #mapid { height: 500px; }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="mapid"></div>
+  <script>
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoiamFja29rbyIsImEiOiJja29rYXlqcGcwNmltMm9ucHVvc2g1Nnh4In0.rxC8sN2sPdBGd2hl3b6Tzw'
+    }).addTo(mymap);
+  var marker = L.marker([51.5, -0.09]).addTo(mymap).bindPopup("You clicked marker: 1").openPopup();
+  var marker2 = L.marker([51.5, -0.12]).addTo(mymap).bindPopup("You clicked marker: 2").openPopup();
+  var marker3 = L.marker([51.5, -0.13]).addTo(mymap).bindPopup("You clicked marker: 3").openPopup();
+  var marker4 = L.marker([51.5, -0.14]).addTo(mymap).bindPopup("You clicked marker: 4").openPopup();
+  var marker5 = L.marker([51.5, -0.15]).addTo(mymap).bindPopup("You clicked marker: 5").openPopup();
+  var marker6 = L.marker([51.5, -0.16]).addTo(mymap).bindPopup("You clicked marker: 6").openPopup();
+
+  </script>
+</body>
+</html>
